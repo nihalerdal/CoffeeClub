@@ -75,3 +75,18 @@ let icedOrHot = "hot";
 
     // Call the function on page load
     getCoffees(baseUrl, icedOrHot)
+
+        // Event listener for the buttons
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("buttonHot").addEventListener("click", function(event){
+                event.preventDefault();
+                icedOrHot = "hot";
+                getCoffees(baseUrl, icedOrHot);
+            });
+        
+            document.getElementById("buttonIced").addEventListener("click", function(event){
+                event.preventDefault();
+                icedOrHot = "iced";
+                getCoffees(baseUrl, icedOrHot);
+            });
+        });
