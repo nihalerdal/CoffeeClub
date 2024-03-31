@@ -41,7 +41,7 @@ button {
 .card {
     width: calc((100% - 160px) / 3);
     min-width: 400px;
-    max-height: 600px;
+    max-height: 560px;
     border: 2px solid #FFBB5C;
     border-radius: 5px;
     padding: 10px;

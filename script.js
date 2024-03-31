@@ -33,7 +33,7 @@ async function getCoffees(url, type) {
             name.classList.add("name");
             card.appendChild(name)
 
-            // Create a description and add it to the text container
+            // Create a description and add it to the container
             const description = document.createElement("p");
             description.innerText = json[i].description;
             description.classList.add("description");
@@ -43,24 +43,22 @@ async function getCoffees(url, type) {
             const ingredients = document.createElement("div");
             ingredients.classList.add("ingredients");
 
-            // Create an ingredient header and add it to the text container
+            // Create an ingredient header and add it to the container
             const ingredientHeader = document.createElement("h4");
             ingredientHeader.innerHTML = "Ingredients:";
             ingredientHeader.classList.add("ingredient_header");
             card.appendChild(ingredientHeader);
 
-            // Loop through each ingredient and add it to the ingredients container
-            for (let j = 0; j < json[i].ingredients.length; j++) {
-                const item = document.createElement("p");
-                item.innerText = json[i].ingredients[j];
-                item.classList.add("ingredient");
-                ingredients.appendChild(item);
-            }
+            // Create an item for each ingredient and add it to the ingredients container
+            const item = document.createElement("span");
+            item.innerText = json[i].ingredients.join(", ");
+            item.classList.add("ingredient");
+            ingredients.appendChild(item);
 
-            //Add ingredients container to the text container
+            //Add ingredients container to the container
             card.appendChild(ingredients);
 
-            // Add the card container to the main container
+            // Add the container to the main container
             cards.appendChild(card);
         }
     }
