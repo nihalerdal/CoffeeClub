@@ -24,7 +24,6 @@ async function getCoffees(url, type) {
             const image = document.createElement("img");
             image.src = json[i].image;
             image.classList.add("image");
-            //imageContainer.appendChild(image);
             card.appendChild(image);
 
             // Create a name and add it to the container
@@ -57,9 +56,10 @@ async function getCoffees(url, type) {
 
             //Add ingredients container to the container
             card.appendChild(ingredients);
-
             // Add the container to the main container
             cards.appendChild(card);
+            //call the function for default value("hot")
+            activateButton()
         }
     }
 
@@ -77,11 +77,24 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
         icedOrHot = "hot";
         getCoffees(baseUrl, icedOrHot);
+        activateButton()
     });
 
     document.getElementById("buttonIced").addEventListener("click", function (event) {
         event.preventDefault();
         icedOrHot = "iced";
         getCoffees(baseUrl, icedOrHot);
+        activateButton()
     });
 });
+
+// Activate button state based on selection
+function activateButton() {
+    if (icedOrHot === "hot") {
+        document.getElementById("buttonHot").classList.add("active");
+        document.getElementById("buttonIced").classList.remove("active");
+    } else {
+        document.getElementById("buttonHot").classList.remove("active");
+        document.getElementById("buttonIced").classList.add("active");
+    }
+}
