@@ -2,6 +2,8 @@
 
 This application allows users to explore various types of coffee, including both hot and iced options. Users have access to detailed coffee descriptions, ingredient lists, and accompanying images.
 
+![Screen Shot 2025-02-05 at 9 45 13 PM](https://github.com/user-attachments/assets/bf15cdd2-9aab-4588-b57c-035d4f835f2b)
+
 ## Features
 - View a list of hot and iced coffee options.
 - Click on buttons to switch between hot and iced coffee.
